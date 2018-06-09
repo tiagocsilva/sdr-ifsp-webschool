@@ -6,3 +6,11 @@ html, body {
 .navbar {
     background: linear-gradient(141deg, #1fc8db 0%, #1fc8db 51%, #2cb5e8 75%) !important;
 }
+
+.green-circle {
+    width: 15px;               
+    height: 15px;
+    background: green;
+    border-radius: 100%;
+    margin-right: 5px;
+}
