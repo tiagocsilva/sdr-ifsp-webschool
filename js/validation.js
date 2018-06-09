@@ -1,8 +1,9 @@
 function validForm(){
     let email = document.getElementById("Email").value;
     let senha = document.getElementById("Senha").value;
+    let perfil = document.getElementById("Perfil").value;
 
-    if (!(senha != "" && validateEmail(email))){
+    if (!(senha != "" && perfil != "" && validateEmail(email))){
         return false;
     }
 }

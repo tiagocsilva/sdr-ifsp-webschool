@@ -11,25 +11,25 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <form class="form-container" action="./php/auth/token.php" onsubmit="return validForm()">
+                <form class="form-container" method="POST" action="./php/auth/auth.php" onsubmit="return validForm();">
                     <div class="form-group">
                         <label for="Email">Email</label>
-                        <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Email" required="required">
+                        <input type="email" class="form-control" name="Email" id="Email" aria-describedby="emailHelp" placeholder="Email" required="required">
                         <small id="emailHelp" class="form-text text-muted">Nós nunca compartilharemos seu email com ninguém.</small>
                     </div>
                     <div class="form-group">
                         <label for="Senha">Senha</label>
-                        <input type="password" class="form-control" id="Senha" placeholder="Senha" required="required">
+                        <input type="password" class="form-control" name="Senha" id="Senha" placeholder="Senha" required="required">
                     </div>
                     <div class="form-group">
                         <label class="mr-sm-2" for="Perfil">Perfil</label>
-                        <select class="custom-select mr-sm-2" id="Perfil" required="required">
+                        <select class="custom-select mr-sm-2" name="Perfil" id="Perfil" required="required">
                             <option value="" selected>Escolha...</option>
                             <option value="1">Aluno</option>
                             <option value="2">Professor</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Logar</button>
+                    <button type="submit" name="submit" class="btn btn-primary">Logar</button>
                 </form>
             </div>
         </div>
