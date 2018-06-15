@@ -15,3 +15,14 @@ body {
 .background-default {
     background: #503d3d;
 }
+
+.icon-field {
+    min-width: 45px;
+}
+
+button {
+    transition: all 1s !important;
+}
+button:hover {
+    background: #1fc8db;
+}
