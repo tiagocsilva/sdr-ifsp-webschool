@@ -13,10 +13,11 @@ CREATE TABLE Materia (
 );
 
 CREATE TABLE MateriaUsuarioNota(
-	MateriaNotaID INT PRIMARY KEY AUTO_INCREMENT,
-    MateriaID INT REFERENCES Materia(MateriaID),
-    UsuarioID INT REFERENCES UsuarioID(UsuarioID),
-    Nota FLOAT NOT NULL
+    MateriaID INT,
+    UsuarioID INT,
+    Nota FLOAT NOT NULL,
+    FOREGEIN KEY MateriaID REFERENCES Materia(MateriaID),
+    FOREGEIN KEY UsuarioID REFERENCES Usuario(UsuarioID)
 );
 
 /* INSERT PROFESSORES */
