@@ -23,7 +23,7 @@ $con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect');
     <!-- Image and text -->
     <nav class="navbar navbar-light bg-primary">
         <a class="navbar-brand text-light" href="#">
-            <i class="fab fa-readme"></i> Portal ISFP
+            <i class="fab fa-readme"></i> Portal IFSP
         </a>
         <a href="./index.html" class="text-light">
             <div>
@@ -42,6 +42,11 @@ $con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect');
                 
                 <h3 class="text-center text-default">Bem vindo, Aluno</h3>
                 <div style="font-style: italic" class="text-center">(ltiago90@gmail.com)</div>
+
+                <div style="opacity: 0.5; margin: 10%">
+                    <h1 class="text-center"><i class="fas fa-user-astronaut fa-2x"></i></h1>
+                    <h3 class="text-center">Você não está cadastrado em nenhuma disciplina</h3>
+                </div>
 
                 <div class="shadow p-3 mb-3 bg-white rounded">
 

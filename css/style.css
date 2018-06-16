@@ -15,6 +15,24 @@ html, body {
     margin-right: 5px;
 }
 
-.badge-number {
-    font-size: 14px;
+.badge-input 
+{
+    border: none;
+    width: 50px;
+    color: #FFF !important;
+    text-align: center;
+    font-weight: bold;
+    padding: 3px !important;
+}
+
+table tr td {
+    vertical-align: middle !important;
+}
+
+button {
+    transition: all 0.3s !important;
+}
+button:hover {
+    color: #FFF;
+    background: #1fc8db;
 }
