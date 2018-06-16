@@ -3,7 +3,8 @@ function validForm(){
     let senha = document.getElementById("Senha").value;
     let perfil = document.getElementById("Perfil").value;
 
-    if (!(senha != "" && perfil != "" && validateEmail(email))){
+    if (senha == "" || (perfil !=  1 && perfil != 2 ) || !validateEmail(email)){
+        alert("Digita as credencais viadão...");
         return false;
     }
 }

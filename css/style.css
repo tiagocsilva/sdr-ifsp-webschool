@@ -14,3 +14,7 @@ html, body {
     border-radius: 100%;
     margin-right: 5px;
 }
+
+.badge-number {
+    font-size: 14px;
+}
