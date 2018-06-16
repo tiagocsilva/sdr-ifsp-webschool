@@ -16,8 +16,8 @@ CREATE TABLE MateriaUsuarioNota(
     MateriaID INT,
     UsuarioID INT,
     Nota FLOAT NOT NULL,
-    FOREGEIN KEY MateriaID REFERENCES Materia(MateriaID),
-    FOREGEIN KEY UsuarioID REFERENCES Usuario(UsuarioID)
+    FOREIGN KEY (MateriaID) REFERENCES Materia(MateriaID),
+    FOREIGN KEY (UsuarioID) REFERENCES Usuario(UsuarioID)
 );
 
 /* INSERT PROFESSORES */
