@@ -17,7 +17,7 @@ $con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect');
 				<h3 class="text-center text-default">Bem  Vindo, Aluno</h3>
 				<div style="font-style: italic" class="text-center">(<?php echo $_COOKIE['Email'] ?>)</div>
 
-				<div class="shadow p-3 mb-3 bg-white rounded">
+				<div class="shadow p-3 mb-3 bg-white rounded" style="overflow: auto">
 					<table class="table table-striped">
 						<thead>
 							<tr>

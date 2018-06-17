@@ -36,7 +36,7 @@ if (isset($_GET["Status"]) && ($_GET["Status"] != "")){
 				<h6 class="text-center"><?php echo $materia ?></h6>
 				<div style="font-style: italic; font-size: 12px" class="text-center">(<?php echo $_COOKIE['Email'] ?>)</div>
 
-				<div class="shadow p-3 mb-3 bg-white rounded">
+				<div class="shadow p-3 mb-3 bg-white rounded" style="overflow: auto">
 					<form id="frmNotas" method="POST" action="./php/action/notas.php">
 						<input type="hidden" name="MateriaID" id="MateriaID" value="<?php echo $materia_id ?>">
 						<table class="table table-hover">
