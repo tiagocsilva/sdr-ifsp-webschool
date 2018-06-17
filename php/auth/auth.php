@@ -1,12 +1,8 @@
 <?php
-session_destroy();
-session_start();
 if (isset($_POST["submit"])) {
 	$email = $_POST["Email"];
 	$senha = md5($_POST["Senha"]);
 	$perfil = $_POST["Perfil"];
-
-	$_SESSION["Email"] = $email;
 
 	include '../includes/database.php';
 
@@ -33,7 +29,6 @@ if (isset($_POST["submit"])) {
 			$usuario_id = mysqli_insert_id($con);
 		}else{
 			echo "Error: " . $sql . "<br>" . mysqli_error($con);
-			session_destroy();
 		}
 		
 		setcookie('UsuarioID', base64_encode($usuario_id),0,"/");
@@ -43,7 +38,8 @@ if (isset($_POST["submit"])) {
 		else
 			header("Location: ../../professor.php");
 	}
-	
+
+	die();
 	mysqli_close($con);
 }
 ?>
