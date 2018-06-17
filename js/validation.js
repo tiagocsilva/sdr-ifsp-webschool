@@ -4,10 +4,10 @@ function validForm(){
     let perfil = document.getElementById("Perfil").value;
 
     if (senha == "" || (perfil !=  1 && perfil != 2 ) || !validateEmail(email)){
-        if(email != "" && !validateEmail(email))
+        if (email != "" && !validateEmail(email))
             alert("Email inválido...");
         else
-            alert("Digita as credencais viadão...");
+            alert("Digite as credenciais viadão, ta se achando o espertinho né ?...");
         return false;
     }
 }

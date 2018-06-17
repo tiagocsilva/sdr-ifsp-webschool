@@ -1,8 +1,12 @@
 <?php
+session_destroy();
+session_start();
 if (isset($_POST["submit"])) {
 	$email = $_POST["Email"];
 	$senha = md5($_POST["Senha"]);
 	$perfil = $_POST["Perfil"];
+
+	$_SESSION["Email"] = $email;
 
 	include '../includes/database.php';
 
@@ -12,12 +16,16 @@ if (isset($_POST["submit"])) {
 
 	$result = mysqli_query($con,$sql);
 
-	if(mysqli_num_rows($result) > 0){
+	if (mysqli_num_rows($result) > 0){
 		$row = mysqli_fetch_assoc($result);
-		   
-		setcookie('UsuarioID', base64_encode($row['UsuarioID']),(time() + (3 * 24 * 3600)));
+		
+		setcookie('UsuarioID', base64_encode($row['UsuarioID']),0,"/");
+		setcookie('Email', $email,0,"/");
 
-	   	header("Location: ../../dashboard.php");
+		if ($perfil == 1)
+			header("Location: ../../aluno.php");
+		else
+			header("Location: ../../professor.php");
 	}else{
 		$sql = "INSERT INTO Usuario(Email,Senha,Perfil) VALUES('$email','$senha',$perfil)";
 
@@ -25,17 +33,17 @@ if (isset($_POST["submit"])) {
 			$usuario_id = mysqli_insert_id($con);
 		}else{
 			echo "Error: " . $sql . "<br>" . mysqli_error($con);
+			session_destroy();
 		}
 		
-		setcookie('UsuarioID', base64_encode($usuario_id),(time() + (3 * 24 * 3600)));
-		header("Location: ../../dashboard.php");
+		setcookie('UsuarioID', base64_encode($usuario_id),0,"/");
+		
+		if ($perfil == 1)
+			header("Location: ../../aluno.php");
+		else
+			header("Location: ../../professor.php");
 	}
 	
-	die();
 	mysqli_close($con);
-}
-
-function generateRandomString($length = 10) {
-	return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
 }
 ?>

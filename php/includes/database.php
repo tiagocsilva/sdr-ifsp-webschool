@@ -1,6 +1,6 @@
 <?php
 define('HOST','localhost');
 define('USER','root');
-define('PASS','lais2008@');
+define('PASS','');
 define('DB','sdr-ifsp-webschool'); 
 ?>
