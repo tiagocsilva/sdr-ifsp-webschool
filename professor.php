@@ -113,7 +113,7 @@ if (isset($_GET["Status"]) && ($_GET["Status"] != "")){
 			$(element).addClass("bg-warning");
 		}else if (element.value == 6){
 			$(element).addClass("bg-primary");
-		}else if (element.value == 0){
+		}else if (element.value == ""){
 			$(element).addClass("bg-secondary");
 		}else{
 			$(element).addClass("bg-danger");

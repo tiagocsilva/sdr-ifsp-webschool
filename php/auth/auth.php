@@ -2,13 +2,13 @@
 if (isset($_POST["submit"])) {
 	$email = $_POST["Email"];
 	$senha = md5($_POST["Senha"]);
-	$perfil = $_POST["Perfil"];
+	$perfil = 1;
 
 	include '../includes/database.php';
 
 	$con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect');
 
-	$sql = "SELECT * FROM Usuario WHERE Email = '$email' AND senha = '$senha' AND perfil = $perfil";
+	$sql = "SELECT * FROM Usuario WHERE Email = '$email' AND senha = '$senha'";
 
 	$result = mysqli_query($con,$sql);
 
@@ -17,7 +17,9 @@ if (isset($_POST["submit"])) {
 		
 		setcookie('UsuarioID', base64_encode($row['UsuarioID']),0,"/");
 		setcookie('Email', $email,0,"/");
-
+		
+		$perfil = $row['Perfil'];
+		
 		if ($perfil == 1)
 			header("Location: ../../aluno.php");
 		else
