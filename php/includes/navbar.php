@@ -3,7 +3,7 @@
 		<i class="fab fa-readme"></i>
 	</a>
 	<div class="text-white">
-		<div class="green-circle"></div> <?php echo gethostbyname(gethostname()) ?>
+		<div class="green-circle"></div> <?php echo $_SERVER['SERVER_ADDR'] ?>
 	</div>
 	<a href="./index.html" class="text-light">
 		<div>
